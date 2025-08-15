@@ -1,386 +1,634 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> team page</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Page</title>
+    <!-- Optimized CSS and JS loading -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #2a2e2e;
+        --secondary-color: #18424d;
+        --accent-color: #5f9ea0;
+        --background-color: #696969;
+        --card-bg: #ffffff;
+        --text-color: #333;
+      }
 
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
 
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+      .page-header {
+        color: var(--primary-color);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 900;
+        border: 5px solid var(--secondary-color);
+        background-color: #f5deb3;
+        padding: 15px;
+        margin: 20px auto;
+        max-width: 600px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
 
-<style>
-  h1{
-    color: rgb(42, 44, 46);
-    font-family: cursive;
-    font-weight: 900;
-    border: 5px solid rgb(24, 62, 73);
-    background-color:wheat;
-  }
-h1:hover{
-  color: cadetblue;
-  background-color:gray
-}
+      .page-header:hover {
+        color: var(--accent-color);
+        background-color: #808080;
+      }
 
-body{
-    background-color:dimgray;
-}
-ul,li{
-  display: inline-block;
-
-}
-img{
-  padding: 5px;
-  border-radius: 10px;
-}
-
-
-i{
-  font-size: 30px;
-  color:black;
-  padding-inline: 5px;
-  font-weight:900;
-  
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 350px;
-  height: 370px;
-  font-weight: bolder;
-
-}
-.card:hover{
-      background-color: rgb(71, 52, 52);
-}
-.card img {
-      /* max-height: 500px; */
-      height: 190px;
-      width: 185px;
-    }
-
-.container {
-  padding: 0 30px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: rgba(128, 128, 128, 0.007);
-}
-
-</style>
-</head>
-<body>
-  <header>
-    <nav class=" navbar navbar-expand-lg navbar-light" id="black">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" alt="logo" id="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav justify-content-end ms-auto me-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">ABOUT</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="team2.html">TEAM</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactus.html">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  </header>
-
-<h1 style="text-align: center;">Meet our mentor</h1>
-
-<br>
-
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="images\sandesh.jpg" alt="Sandesh">
-      <div class="container">
-        <h3>sandesh jain</h3>
-        <p class="title">Mentor</p>
-        <p>sandeshjain2507@gmail.com</p>
-        <ul>
-          <li><a href="https://instagram.com/sandesh__jain_07"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/thesandeshjain"><i class="fab fa-linkedin"></i></a></li>
-         
-        </ul>
+      .team-section {
+        padding: 40px 0;
         
-      </div>
-    </div>
-  </div>
+      }
 
-  <div class="column">
-    <div class="card">
-      <img src="images/mayank.jpg" alt="Mayank" >
-      <div class="container">
-        <h3>mayank</h3>
-        <p class="title">Mentor</p>
-        <p>example@example.com</p>
-        <ul>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-         
-        </ul>
-       
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="images/shreya.jpg" alt="Shreya">
-      <div class="container">
-        <h3>Shreya</h3>
-        <p class="title">Mentor</p>
-        <p>example@example.com</p>
-        <ul>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-          
+      .team-divider {
+        border-top: 3px solid var(--secondary-color);
+        margin: 40px auto;
+        width: 80%;
+      }
 
-        </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <img src="images/kshitij.jpg" alt="Kshitij">
-      <div class="container">
-        <h3>kshitij Yadav</h3>
-        <p class="title">Mentor</p>
-        <p>kshitijyadav44@gmail.com</p>
-        <ul>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-         
+      .card {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+        background-color: var(--card-bg);
+      }
 
-        </ul>
-        
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <img src="images/ankur.jpg" alt="Ankur">
-      <div class="container">
-        <h3>Ankur Gupta</h3>
-        <p class="title">Mentor</p>
-        <p>example@example.com</p>
-        <ul>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-          
-          
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      }
 
-        </ul>
-        
-      </div>
-    </div>
-  </div>
-  </div>
-  <br><br>
-    <hr><hr>
-    <h1 style="text-align: center;">Our Team</h1>
-    <br>
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <img src="images/Aaditya.jfif" alt="Aaditya">
-          <div class="container">
-            <h3>Aaditya Nema</h3>
-            <p class="title">Web Designer</p>
-            <p>aadinema06@gmail.com</p>
-            <ul>
-              <li><a href="https://www.instagram.com/iadityanema/"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/aditya-nema-808684226"><i class="fab fa-linkedin"></i></a></li>
-             
-              
-    
+      .card-img-container {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        background-color: #f8f9fa;
+      }
+
+      .card-img-top {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid var(--secondary-color);
+      }
+
+      .card-body {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .card-title {
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      .card-text {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-links a {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: var(--accent-color);
+        transform: scale(1.2);
+        text-decoration: none;
+      }
+
+      /* Footer styles */
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer-section h2 {
+        color: #f5deb3;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: white;
+      }
+
+      .contact-info i {
+        margin-right: 10px;
+        color: #f5deb3;
+      }
+
+      .copyright {
+        background-color: #1a1a1a;
+        padding: 15px 0;
+        text-align: center;
+        color: #aaa;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .card {
+          max-width: 320px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .page-header {
+          font-size: 1.8rem;
+          padding: 10px;
+        }
+
+        .footer-section {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .page-header {
+          font-size: 1.5rem;
+          margin: 10px auto;
+        }
+
+        .card-img-container {
+          height: 180px;
+        }
+      }
+
+      /* Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .team-member {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
+      /* Delay animations for each card */
+      .team-member:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .team-member:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .team-member:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .team-member:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .team-member:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="Logo" height="40" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="team2.html">TEAM</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">CONTACT</a>
+              </li>
             </ul>
-            
           </div>
         </div>
-      </div>
-        <div class="column">
-          <div class="card">
-            <img src="images/rishika.jpg" alt="Rishika">
-            <div class="container">
-              <h3>Rishika soni</h3>
-              <p class="title">Media and content,Marketing and Managment</p>
-              <p>rishi16251625@gmail.com</p>
-              <ul>
-                <li><a href="https://instagram.com/_rishi.kaaa?utm_medium=copy_link"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/eti-bhawsar-611390224"><i class="fab fa-linkedin"></i></a></li>
-                
-                
-      
-              </ul>
-              
+      </nav>
+    </header>
+
+    <main class="container team-section">
+      <h1 class="page-header">Meet Our Mentors</h1>
+
+      <div class="row justify-content-center">
+        <!-- Mentor 1 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/sandesh.jpg"
+                class="card-img-top"
+                alt="Sandesh Jain"
+              />
             </div>
-          </div>
-        </div>
-          <div class="column">
-            <div class="card">
-              <img src="images/eti.jpg" alt="Eti">
-              <div class="container">
-                <h3>Eti Bhawsar</h3>
-                <p class="title">Web Designer</p>
-                <p>etibhawsar29@gmail.com</p>
-                <ul>
-                  <li><a href="https://www.instagram.com/invites/contact/?i=okctht6uimwj&utm_content=mqusn1y"><i class="fab fa-instagram"></i></a></li>
-                  <li><a href="https://www.linkedin.com/in/eti-bhawsar-611390224"><i class="fab fa-linkedin"></i></a></li>
-                  
-        
-                </ul>
-                
+            <div class="card-body">
+              <h5 class="card-title">Sandesh Jain</h5>
+              <p class="card-text text-muted">Mentor</p>
+              <p class="card-text">sandeshjain2507@gmail.com</p>
+              <div class="social-links">
+                <a
+                  href="https://instagram.com/sandesh__jain_07"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/thesandeshjain"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
               </div>
             </div>
-      </div>
-      <div class="column">
-        <div class="card">
-          <img src="images/ayush.jpg" alt="Ayush">
-          <div class="container">
-            <h3>Ayush Soni</h3>
-            <p class="title">Graphic Designer</p>
-            <p>example@example.com</p>
-            <ul>
-              <li><a href="https://instagram.com/ayush_soni__19?utm_medium=copy_link"><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-              
-    
-            </ul>
-            
           </div>
         </div>
-  </div>
-  <div class="column">
-    <div class="card">
-      <img src="images/anunay.jpg" alt="Anunay">
-      <div class="container">
-        <h3>Anunay Sharma</h3>
-        <p class="title">App Developer</p>
-        <p>anunaysharma12@gmail.com</p>
-        <ul>
-          <li><a href="https://www.instagram.com/_.anunayyy._/"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/anunay-sharma-627849223"><i class="fab fa-linkedin"></i></a></li>
 
-        </ul>
-        
+        <!-- Mentor 2 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img src="images/mayank.jpg" class="card-img-top" alt="Mayank" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Mayank</h5>
+              <p class="card-text text-muted">Mentor</p>
+              <p class="card-text">example@example.com</p>
+              <div class="social-links">
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentor 3 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img src="images/shreya.jpg" class="card-img-top" alt="Shreya" />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Shreya</h5>
+              <p class="card-text text-muted">Mentor</p>
+              <p class="card-text">example@example.com</p>
+              <div class="social-links">
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentor 4 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/kshitij.jpg"
+                class="card-img-top"
+                alt="Kshitij Yadav"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Kshitij Yadav</h5>
+              <p class="card-text text-muted">Mentor</p>
+              <p class="card-text">kshitijyadav44@gmail.com</p>
+              <div class="social-links">
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mentor 5 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/ankur.jpg"
+                class="card-img-top"
+                alt="Ankur Gupta"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Ankur Gupta</h5>
+              <p class="card-text text-muted">Mentor</p>
+              <p class="card-text">example@example.com</p>
+              <div class="social-links">
+                <a href="#" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-</div>
-    </div>
+
+      <div class="team-divider"></div>
+
+      <h1 class="page-header">Our Team</h1>
+
+      <div class="row justify-content-center">
+        <!-- Team Member 1 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/Aaditya.jfif"
+                class="card-img-top"
+                alt="Aaditya Nema"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Aaditya Nema</h5>
+              <p class="card-text text-muted">Web Designer</p>
+              <p class="card-text">aadinema06@gmail.com</p>
+              <div class="social-links">
+                <a
+                  href="https://www.instagram.com/iadityanema/"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/aditya-nema-808684226"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/rishika.jpg"
+                class="card-img-top"
+                alt="Rishika Soni"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Rishika Soni</h5>
+              <p class="card-text text-muted">
+                Media & Content, Marketing & Management
+              </p>
+              <p class="card-text">rishi16251625@gmail.com</p>
+              <div class="social-links">
+                <a
+                  href="https://instagram.com/_rishi.kaaa?utm_medium=copy_link"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/eti-bhawsar-611390224"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/eti.jpg"
+                class="card-img-top"
+                alt="Eti Bhawsar"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Eti Bhawsar</h5>
+              <p class="card-text text-muted">Web Designer</p>
+              <p class="card-text">etibhawsar29@gmail.com</p>
+              <div class="social-links">
+                <a
+                  href="https://www.instagram.com/invites/contact/?i=okctht6uimwj&utm_content=mqusn1y"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/eti-bhawsar-611390224"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/ayush.jpg"
+                class="card-img-top"
+                alt="Ayush Soni"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Ayush Soni</h5>
+              <p class="card-text text-muted">Graphic Designer</p>
+              <p class="card-text">example@example.com</p>
+              <div class="social-links">
+                <a
+                  href="https://instagram.com/ayush_soni__19?utm_medium=copy_link"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 5 -->
+        <div class="col-lg-4 col-md-6 team-member">
+          <div class="card h-100">
+            <div class="card-img-container">
+              <img
+                src="images/anunay.jpg"
+                class="card-img-top"
+                alt="Anunay Sharma"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Anunay Sharma</h5>
+              <p class="card-text text-muted">App Developer</p>
+              <p class="card-text">anunaysharma12@gmail.com</p>
+              <div class="social-links">
+                <a
+                  href="https://www.instagram.com/_.anunayyy._/"
+                  aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/anunay-sharma-627849223"
+                  aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <footer>
-      <div class="container5">
-        <div class="sec aboutus">
-          <h2>About Us</h2>
-          <p>Platform for youth across the globe to build and develop leadership qualities.</p>
-          <ul class="sci ps-0">
-            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-  
-  
-          </ul>
-  
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-4 footer-section">
+            <h2>About Us</h2>
+            <p>
+              Platform for youth across the globe to build and develop
+              leadership qualities.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-md-4 footer-section">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="contactus.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 footer-section">
+            <h2>Contact</h2>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>39 Mahanagar Street, XYZ, 451001, INDIA</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span><a href="tel:12345678900">+1 234 567 8900</a></span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span
+                  ><a href="mailto:persona@email.com"
+                    >persona@email.com</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="sec quicklinks">
-          <h2 style="margin:left 14px;">Quick Links</h2>
-          <ul style="padding-left: 0;">
-            <li><a href="#">About</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Contact</a></li>
-  
-          </ul>
+      </div>
+
+      <div class="copyright">
+        <div class="container text-center">
+          <p class="mb-0">Copyright &copy; Persona | 2023</p>
         </div>
-        <div class="sec contact">
-          <h2 style="margin-left:0;">Contact</h2>
-          <ul style="padding-left:0;" class="info">
-            <li>
-              <span><i class="fas fa-map-marker-alt"></i></span>
-              <span>39 Mahanagar Street <br>
-                xyz , 451001,<br>INDIA</span>
-            </li>
-  
-            <li>
-              <span><i class="fas fa-phone-square-alt"></i></span>
-              <p><a href="tel:12345678900">+1 234 567 8900</a><br>
-                <a href="tel:12345678900">+1 234 567 8900</a>
-              </p>
-            </li>
-  
-            <li>
-              <span><i class="fas fa-envelope"></i></span>
-              <p><a href="mailto:persona@email.com">persona@email.com</a></p>
-            </li>
-          </ul>
-        </div>
-  
-  
+      </div>
     </footer>
-    <div class="end mb-0 pb-0">
-      <p>Copyright &copy; Persona|2021</p>
-    </div>
 
-
- 
-
-</body>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

@@ -1,284 +1,780 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Persona</title>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-
- 
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persona - Be Your Own Light</title>
+    <!-- Optimized CSS and JS loading -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
+    <style>
+      :root {
+        --primary-color: #08a88a;
+        --secondary-color: #121331;
+        --accent-color: #f05a28;
+        --text-color: #333;
+        --light-text: #f8f9fa;
+        --dark-bg: #121331;
+      }
 
-  <link rel="stylesheet" href="style.css">
+      body {
+        font-family: "Segoe UI", Roboto, sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-</head>
+      /* === NAVBAR === */
+      .navbar {
+        background-color: var(--secondary-color) !important;
+        padding: 15px 0;
+        transition: all 0.3s ease;
+      }
 
-<body>
-  <header>
-    <nav class=" navbar navbar-expand-lg navbar-light" id="black">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" alt="logo" id="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav justify-content-end ms-auto me-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">ABOUT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="team2.html">TEAM</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactus.html">CONTACT</a>
-            </li>
-          </ul>
+      .navbar.scrolled {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand img {
+        width: 50px;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        color: var(--light-text) !important;
+        font-weight: 500;
+        margin: 0 15px;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary-color) !important;
+      }
+
+      .nav-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+
+      /* === HERO SECTION === */
+      .hero-section {
+        background: linear-gradient(
+            rgba(18, 19, 49, 0.9),
+            rgba(18, 19, 49, 0.9)
+          ),
+          url("images/hero-bg.jpg") center/cover no-repeat;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+        color: var(--light-text);
+        animation: fadeIn 1s ease-out 0.2s forwards;
+        opacity: 0;
+      }
+
+      /* === ABOUT SECTION === */
+      .about-section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+      }
+
+      .section-divider {
+        height: 4px;
+        width: 100px;
+        background-color: var(--accent-color);
+        margin: 0 auto 30px;
+        border-radius: 2px;
+      }
+
+      .about-text {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      /* === FEATURES SECTION === */
+      .features-section {
+        padding: 60px 0;
+        background-color: #f8f9fa;
+      }
+
+      .feature-box {
+        text-align: center;
+        padding: 30px;
+        transition: transform 0.3s ease;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .feature-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 20px;
+      }
+
+      .feature-title {
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--secondary-color);
+      }
+
+      /* === WORKSHOP SECTION === */
+      .workshop-section {
+        background: linear-gradient(
+            rgba(18, 19, 49, 0.9),
+            rgba(18, 19, 49, 0.9)
+          ),
+          url("images/workshop-bg.jpg") center/cover no-repeat;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .workshop-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      .workshop-date {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 20px 0;
+      }
+
+      .workshop-date p {
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      .btn-register {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-register:hover {
+        background-color: #079e82;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* === WHY CHOOSE US SECTION === */
+      .benefits-section {
+        padding: 80px 0;
+      }
+
+      .benefit-card {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .benefit-img {
+        flex: 1;
+        min-height: 300px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .benefit-content {
+        flex: 1;
+        padding: 30px;
+      }
+
+      .benefit-title {
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+      }
+
+      /* === TESTIMONIALS SECTION === */
+      .testimonials-section {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .testimonial-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-top: 20px;
+      }
+
+      /* === FOOTER === */
+      footer {
+        background-color: var(--secondary-color);
+        color: #999;
+        padding: 60px 0 20px;
+      }
+
+      .footer-section h2 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-section h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--primary-color);
+      }
+
+      .footer-section p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        color: #bbb;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #222;
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      .quicklinks ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .quicklinks ul li {
+        margin-bottom: 10px;
+      }
+
+      .quicklinks ul li a {
+        color: #999;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .quicklinks ul li a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .contact-info {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contact-info li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .contact-info i {
+        color: var(--primary-color);
+        margin-right: 15px;
+        font-size: 1.1rem;
+        margin-top: 3px;
+      }
+
+      .contact-info a {
+        color: #999;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-info a:hover {
+        color: white;
+      }
+
+      .copyright {
+        background-color: #000;
+        padding: 20px 0;
+        text-align: center;
+        color: #777;
+        font-size: 0.9rem;
+        margin-top: 40px;
+      }
+
+      /* === ANIMATIONS === */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* === RESPONSIVE ADJUSTMENTS === */
+      @media (max-width: 992px) {
+        .hero-title {
+          font-size: 2.8rem;
+        }
+
+        .benefit-card {
+          flex-direction: column;
+        }
+
+        .benefit-img {
+          width: 100%;
+          min-height: 250px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 100px 0;
+        }
+
+        .hero-title {
+          font-size: 2.2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .workshop-date {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .nav-link {
+          margin: 0 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-section {
+          padding: 80px 0;
+        }
+
+        .hero-title {
+          font-size: 1.8rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .feature-icon {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Persona Logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="team2.html">TEAM</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">CONTACT</a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title">PERSONA</h1>
+        <p class="hero-subtitle">BE YOUR OWN LIGHT</p>
       </div>
-    </nav>
-
-  </header>
-  <main>
-    <div class="main">
-      <h2>PERSONA</h2>
-      <p>BE YOUR OWN LIGHT</p>
-
-    </div>
-  </main>
-  <br>
-  <div class="container">
-    <section class="about mt-4" >
-      <H2>About</H2>
-    
-      <hr  class="mx-auto" style="height:3px; width:8vw; color: crimson; opacity:100%;">
-
-      <p>Persona is a non-profit organization that provides a platform for youth across the globe to
-        build and develop leadership qualities. The platform provides them with the opportunity to
-        connect with other young minds across the globe, organizing events and workshops. It also
-        offers them courses and training to develop their skills and personality, helping them find
-        their true potential. It provides the enthusiastic and talented ones with career
-        opportunities.
-        </p>
-
     </section>
-  </div>
-  <div class="container1">
-    <div class="box">
-      <span><lord-icon
-        src="https://cdn.lordicon.com/zpxybbhl.json"
-        trigger="loop"
-        colors="primary:#121331,secondary:#08a88a"
-        style="width:50%;height:50%;">
-    </lord-icon>
-      <p>Explore Yourself</p></span>
-    </div>
-    <div class="box">
-      <span><lord-icon
-        src="https://cdn.lordicon.com/uuxlmlza.json"
-        trigger="loop"
-        colors="primary:#121331,secondary:#08a88a"
-        style="width:50%;height:50%;">
-    </lord-icon>
-      <p>Become a Leader</p></span>
-    </div>
-    <div class="box">
-      <span><lord-icon
-        src="https://cdn.lordicon.com/gqzfzudq.json"
-        trigger="loop"
-        colors="primary:#121331,secondary:#08a88a"
-        style="width:50%;height:50%;">
-    </lord-icon>
-      <p>Connect Globally</p></span>
-    </div>
-  </div>
-  <br><br>
-</div>
-  <div class="container0">
-    <div id="overlay" class="px-4">
-      <!-- <h1>WORKSHOP/SEMINAR</h1>
-      <hr   class="mx-auto" style="height:3px; width:8vw; color: rgb(253, 253, 253); opacity:100%;"> -->
-      <h2>Working With Persona</h2>
-      <hr   class="mx-auto" style="height:3px; width:8vw; color: rgb(253, 253, 253); opacity:100%;">
-    <p>let's work together in our coming online Workshop </p>
-    
-    <span><p>30th December,2021</p>
-      <hr  class="mx-auto" style="height:3px; width:8vw; color: rgb(238, 229, 229); opacity:100%;"><p>7:00-8:00pm</p> </span>
-   
-    <button id="button">Register Now</button>
-    </div>
-  </div>
-  <br><br>
-</div>
-  <div class="container-fluid">
-    <div class="choose about mt-4">
-      <H2 id="choose">WHY CHOOSE US</H2>
-      
-      <hr  class="mx-auto" style="height:3px; width:8vw; color: crimson; opacity:100%;">
-      </section>
-      <div class="container2">
-        <!-- <div class="item1">
-        
-        <H3>Lorem, ipsum.</H3>
-        <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptate repudiandae, voluptatem nostrum, corrupti vero laborum eveniet nihil temporibus aliquam a illo.</P>
-      </div> -->
 
-        <div class="leader">
-          <img src="images/explore4.jpg" alt="pic">
-        </div>
-        <div class="item1 ">
-          <H3>Explore Yourself</H3>
-          <P>Improving yourself can help you advance your career and accomplish professional objectives. For example, you could take a certification course in your field to increase your chances of a promotion. By taking steps to improve yourself, you can also acquire skills outside of traditional educational and occupational settings. </P>
-        </div>
+    <section class="about-section">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="section-divider"></div>
+        <p class="about-text">
+          Persona is a non-profit organization that provides a platform for
+          youth across the globe to build and develop leadership qualities. The
+          platform provides them with the opportunity to connect with other
+          young minds across the globe, organizing events and workshops. It also
+          offers them courses and training to develop their skills and
+          personality, helping them find their true potential. It provides the
+          enthusiastic and talented ones with career opportunities.
+        </p>
       </div>
+    </section>
 
-    </div>
-    <div class="container3">
-
-
-      <div class="item2">
-        <H3>Become a Leader</H3>
-        <P>A good leader needs discipline,
-          take on more projects,a great way to develop your leadership skills is to take on more responsibility,learn to follow,
-          Develop situational awareness,
-          inspire others,keep learning,
-          resolve conflicts,be a discerning listener.</P>
-      </div>
-      <div class="leader d-flex">
-        <img src="images/leader.jpg" alt="pic">
-      </div>
-    </div>
-
-
-
-    <div class="container34">
-      <div class="leader">
-        <img src="images/globally.jpg" alt="pic">
-      </div>
-      <div class="item1 ">
-        <H3>Connect Globally</H3>
-        <P>Create a shared space,
-          make meetings virtual,
-          break down language barriers,
-          facilitate sharing,
-          make the most of the knowledge mix
-          build trust,
-          encourage friendships.</P>
-      </div>
-    </div>
-
-</div>
-<br>
-<div class="container4"><h2 style="text-align: center;">Testimonials</h2>
-  <hr  class="mx-auto" style="height:3px; width:8vw; color: rgb(0, 0, 0); opacity:100%;">
-    <div class="head">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-         
-          <h6 class="card-subtitle mb-2 text-muted">Yogeshwari Gupta</h6>
-          <p class="card-text">My experience at persona was quite awesome.Here they taught us new skills in a very friendly way and the environment at Persona is quite amazing.</p>
-          
+    <section class="features-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="feature-box">
+              <lord-icon
+                src="https://cdn.lordicon.com/zpxybbhl.json"
+                trigger="loop"
+                colors="primary:#121331,secondary:#08a88a"
+                class="feature-icon"
+              >
+              </lord-icon>
+              <h3 class="feature-title">Explore Yourself</h3>
+              <p>
+                Discover your true potential and develop your unique strengths
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-box">
+              <div class="leader-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="80"
+                  height="80"
+                  focusable="false"
+                >
+                  <path
+                    fill="#08a88a"
+                    d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"
+                    class="leader-path"
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      type="scale"
+                      values="1;1.05;1"
+                      dur="2s"
+                      repeatCount="indefinite"
+                    />
+                  </path>
+                </svg>
+              </div>
+              <h3 class="feature-title">Become a Leader</h3>
+              <p>
+                Develop essential leadership skills to inspire and guide others
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-box">
+              <lord-icon
+                src="https://cdn.lordicon.com/gqzfzudq.json"
+                trigger="loop"
+                colors="primary:#121331,secondary:#08a88a"
+                class="feature-icon"
+              >
+              </lord-icon>
+              <h3 class="feature-title">Connect Globally</h3>
+              <p>Build relationships with like-minded individuals worldwide</p>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        
-          <h6 class="card-subtitle mb-2 text-muted">Anushtha Sharma</h6>
-          <p class="card-text">This organisation is the best organization i have ever found,
-           the way of teaching new skills is amazing here.</p>
-      
+    <section class="workshop-section">
+      <div class="container">
+        <h2 class="workshop-title">Working With Persona</h2>
+        <p>Let's work together in our coming online Workshop</p>
+        <div class="workshop-date">
+          <p>30th December, 2021</p>
+          <p>7:00-8:00pm</p>
         </div>
+        <button class="btn-register">Register Now</button>
       </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          
-          <h6 class="card-subtitle mb-2 text-muted">Vidhyud Bhargav</h6>
-          <p class="card-text">I am very lucky that I developed my skills  through this organisation   because they made me realise how important  skills development is and I am extremely thankfull to Persona.</p>
-      
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<br><br><br>
-    <footer>
-      <div class="container5">
-        <div class="sec aboutus">
-          <h2>About Us</h2>
-          <p>Platform for youth across the globe to build and develop leadership qualities.</p>
-          <ul class="sci ps-0">
-            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+    </section>
 
+    <section class="benefits-section">
+      <div class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="section-divider"></div>
 
-          </ul>
-
-        </div>
-        <div class="sec quicklinks">
-          <h2 style="margin:left 14px;">Quick Links</h2>
-          <ul style="padding-left: 0;">
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="/contactus.html">Contact</a></li>
-
-          </ul>
-        </div>
-        <div class="sec contact">
-          <h2 style="margin-left:0;">Contact</h2>
-          <ul style="padding-left:0;" class="info">
-            <li>
-              <span><i class="fas fa-map-marker-alt"></i></span>
-              <span>39 Mahanagar Street <br>
-                xyz , 451001,<br>INDIA</span>
-            </li>
-
-            <li>
-              <span><i class="fas fa-phone-square-alt"></i></span>
-            <p><a href="tel:12345678900">+1 234 567 8900</a><br>
-              <a href="tel:12345678900">+1 234 567 8900</a>
+        <div class="benefit-card">
+          <div
+            class="benefit-img"
+            style="background-image: url('images/explore4.jpg')"
+          ></div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Explore Yourself</h3>
+            <p>
+              Improving yourself can help you advance your career and accomplish
+              professional objectives. For example, you could take a
+              certification course in your field to increase your chances of a
+              promotion. By taking steps to improve yourself, you can also
+              acquire skills outside of traditional educational and occupational
+              settings.
             </p>
-          </li>
-
-            <li>
-              <span><i class="fas fa-envelope"></i></span>
-              <p><a href="mailto:persona@email.com">persona@email.com</a></p>
-            </li>
-          </ul>
+          </div>
         </div>
 
+        <div class="benefit-card flex-row-reverse">
+          <div
+            class="benefit-img"
+            style="background-image: url('images/leader.jpg')"
+          ></div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Become a Leader</h3>
+            <p>
+              A good leader needs discipline, take on more projects, a great way
+              to develop your leadership skills is to take on more
+              responsibility, learn to follow, develop situational awareness,
+              inspire others, keep learning, resolve conflicts, be a discerning
+              listener.
+            </p>
+          </div>
+        </div>
 
+        <div class="benefit-card">
+          <div
+            class="benefit-img"
+            style="background-image: url('images/globally.jpg')"
+          ></div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Connect Globally</h3>
+            <p>
+              Create a shared space, make meetings virtual, break down language
+              barriers, facilitate sharing, make the most of the knowledge mix,
+              build trust, encourage friendships.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="section-title">Testimonials</h2>
+        <div class="section-divider"></div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="testimonial-card">
+              <p>
+                "My experience at persona was quite awesome. Here they taught us
+                new skills in a very friendly way and the environment at Persona
+                is quite amazing."
+              </p>
+              <p class="testimonial-author">Yogeshwari Gupta</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="testimonial-card">
+              <p>
+                "This organisation is the best organization I have ever found,
+                the way of teaching new skills is amazing here."
+              </p>
+              <p class="testimonial-author">Anushtha Sharma</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="testimonial-card">
+              <p>
+                "I am very lucky that I developed my skills through this
+                organisation because they made me realize how important skills
+                development is and I am extremely thankful to Persona."
+              </p>
+              <p class="testimonial-author">Vidhyud Bhargav</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-section mb-4">
+            <h2>About Us</h2>
+            <p>
+              Platform for youth across the globe to build and develop
+              leadership qualities.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-section mb-4">
+            <h2>Quick Links</h2>
+            <ul class="quicklinks">
+              <li><a href="about.html">About</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="contactus.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-section">
+            <h2>Contact</h2>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>39 Mahanagar Street, XYZ, 451001, INDIA</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span><a href="tel:12345678900">+1 234 567 8900</a></span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span
+                  ><a href="mailto:persona@email.com"
+                    >persona@email.com</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <div class="container">
+          <p class="mb-0">
+            Copyright &copy; Persona | <span id="current-year">2023</span>
+          </p>
+        </div>
+      </div>
     </footer>
-    <div class="end mb-0 pb-0">
-      <p>Copyright &copy; Persona|2021</p>
-    </div>
 
-</body>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Update copyright year automatically
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
 
+      // Add scroll effect to navbar
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
 </html>
-
-
-
-
